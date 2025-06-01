@@ -118,10 +118,8 @@ dtoverlay=dwc2,dr_mode=host
 [all]
 EOF
 
-echo "==> Replacing /boot/firmware/cmdline.txt"
-sudo tee /boot/firmware/cmdline.txt > /dev/null <<EOF
-console=serial0,115200 console=tty1 root=PARTUUID=27735146-02 maxcpus=1 rootfstype=ext4 fsck.repair=yes rootwait cfg80211.ieee80211_regdom=US
-EOF
+echo "==> Update /boot/firmware/cmdline.txt"
+sudo sed -i 's/\(.*\)\(rootwait\)/\1maxcpus=1 \2/' /boot/firmware/cmdline.txt
 
 echo "==> Creating disable_wifi_if_unconnected.sh script"
 sudo tee /usr/local/bin/disable_wifi_if_unconnected.sh > /dev/null <<'EOF'

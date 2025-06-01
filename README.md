@@ -4,8 +4,9 @@ Made for installing Meshtastic on a PiZero 2W and making it as low power as poss
 - Headless operation (no display, HDMI Disabled, no UI overhead)
 - Bluetooth Disabled
 - Minimal peripherals (only SPI/I2C for sensor modules)
-- Conditional networking (Wi-Fi off unless needed)
+- Conditional Wi-Fi (Wi-Fi off unless network is available)
 - Downclocked & lean (single core, slow CPU, tiny GPU memory)
+- Audio disabled
 - Silent & dim (no sound, LED off)
 
 ## To Install
